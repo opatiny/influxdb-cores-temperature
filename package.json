@@ -1,9 +1,10 @@
 {
-  "name": "influxdb-system-info",
+  "name": "influxdb-cores-temperature",
   "version": "0.0.1",
-  "description": "Store system info in InfluxDB database",
+  "description": "Store cores temperature in InfluxDB database",
   "main": "index.js",
   "scripts": {
+    "start": "DEBUG=getEntries node src/index.js",
     "test": "npx run jest",
     "eslint": "eslint src --ext js,jsx",
     "eslint-fix": "npm run eslint -- --fix"
@@ -30,6 +31,7 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
+    "delay": "^4.3.0",
     "influx": "^5.5.1",
     "systeminformation": "^4.23.10"
   },
