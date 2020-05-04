@@ -1,6 +1,6 @@
 # influxdb-cores-temperature
 
-Try learn InfluxDB by storing system information in a database.
+Try learn InfluxDB by storing cores temperature in a database.
 
 ## Database
 
