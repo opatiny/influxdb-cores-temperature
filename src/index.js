@@ -3,7 +3,8 @@
 const debug = require('debug')('index');
 const Influx = require('influx');
 
-const generateNLogs = require('./generateNLogs');
+const generateLogsDelay = require('./generateLogsDelay');
+// const generateNLogs = require('./generateNLogs');
 const getLastNEntries = require('./getLastNEntries');
 
 const influx = new Influx.InfluxDB({
@@ -31,8 +32,11 @@ influx
     }
   })
   .then(() => {
-    debug('Writing temperatures of 100 next seconds to database');
-    generateNLogs(influx, 1);
+    // debug('Writing temperatures of 100 next seconds to database');
+    // generateNLogs(influx, 1);
+
+    debug('Writing temperatures every 10min to database');
+    generateLogsDelay(influx, 10);
   })
   .catch((e) => {
     debug(`Error creating Influx database!`);
